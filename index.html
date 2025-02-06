@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Would You Be My Valentine?</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1/dist/confetti.browser.min.js"></script>
-        <!-- Confetti JS -->
-    </head>
-    <body>
-        <div class="game-container">
-            <h1>Would you be my Valentine?</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Would You Be My Valentine?</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1/dist/confetti.browser.min.js"></script> <!-- Confetti JS -->
+</head>
+<body>
+  <div class="game-container">
+    <h1>Would you be my Valentine?</h1>
+    
+    <button id="yes-button" class="button">Yes</button>
+    <button id="no-button" class="button">No</button>
+    
+    <div id="love-meter">
+      <p>Love Meter</p>
+      <div id="meter-bar"></div>
+      <p id="love-percent">0%</p>
+    </div>
+  </div>
 
-            <button id="yes-button" class="button">Yes</button>
-            <button id="no-button" class="button">No</button>
-
-            <div id="compliment-container">
-                <button id="compliment-button" class="button">
-                    Give me a Compliment 💖
-                </button>
-                <p id="compliment-text"></p>
-            </div>
-
-            <div id="love-meter">
-                <p>Love Meter</p>
-                <div id="meter-bar"></div>
-                <p id="love-percent">0%</p>
-            </div>
-        </div>
-
-        <script src="script.js"></script>
-    </body>
+  <script src="script.js"></script>
+</body>
 </html>
