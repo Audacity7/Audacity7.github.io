@@ -66,8 +66,9 @@ h1 {
   box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
 }
 
+/* REMOVE hover animation on 'No' button to prevent flickering */
 #no-button:hover {
-  animation: moveNoButton 0.5s infinite ease;
+  animation: none;
 }
 
 /* Subtle Heart Animation (for a cute effect) */
@@ -75,11 +76,6 @@ h1 {
   0% { transform: translate(0, 0); }
   50% { transform: translate(50px, -50px); }
   100% { transform: translate(0, 0); }
-}
-
-/* REMOVE hover animation on 'No' button to prevent flickering */
-#no-button:hover {
-  animation: none;
 }
 
 /* Confetti Animation (with hearts) */
