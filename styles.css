@@ -113,20 +113,3 @@ body {
         transform: translateY(-10px);
     }
 }
-
-/* Center the SVG at the top of the page */
-.svg-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10; /* Make sure it's above other content */
-    width: 100%; /* Take up the full width for centering */
-    text-align: center; /* Center the image */
-}
-
-/* Optional: Adjust the size of the SVG if necessary */
-.svg-container img {
-    width: 150px; /* Adjust width to fit your design */
-    height: auto;
-}
