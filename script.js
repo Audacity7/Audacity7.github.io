@@ -104,11 +104,11 @@ function createImage() {
     image.style.width = "2em"; // Adjust the size to match emojis
     image.style.height = "2em"; // Adjust the size to match emojis
 
-    // Define the center area to leave empty (75px width, 100px height)
-    const centerXMin = (window.innerWidth - 75) / 2;
-    const centerXMax = (window.innerWidth + 75) / 2;
-    const centerYMin = (window.innerHeight - 100) / 2;
-    const centerYMax = (window.innerHeight + 100) / 2;
+    // Define the center area to leave empty (150px width, 200px height)
+    const centerXMin = (window.innerWidth - 150) / 2;
+    const centerXMax = (window.innerWidth + 150) / 2;
+    const centerYMin = (window.innerHeight - 200) / 2;
+    const centerYMax = (window.innerHeight + 200) / 2;
 
     let x, y;
 
