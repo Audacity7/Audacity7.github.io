@@ -3,6 +3,7 @@ const yesButton = document.getElementById("yes-button");
 const noButton = document.getElementById("no-button");
 const emojiContainer = document.getElementById("emoji-container");
 const heading = document.querySelector("h1");
+const gameContainer = document.querySelector(".game-container"); // Reference to the game container
 
 // List of progressive questions
 const questions = [
@@ -26,6 +27,11 @@ yesButton.addEventListener("click", () => {
         // Increase button size noticeably (1.5x each time)
         yesSizeMultiplier *= 1.2;
         yesButton.style.transform = `scale(${yesSizeMultiplier})`;
+
+        // Also grow the game container to match the button size
+        const containerScale = 1 + (yesSizeMultiplier - 1) * 0.5; // Make the container grow at a slower rate
+        gameContainer.style.transform = `scale(${containerScale})`;
+        gameContainer.style.transition = "transform 0.3s ease"; // Smooth transition for container resizing
     } else {
         // Last question -> Trigger confetti
         confetti({
@@ -42,7 +48,7 @@ yesButton.addEventListener("click", () => {
         noButton.style.display = "none"; // Hide the "No" button
 
         // Show the message and the GIF in the same box (the box where the question was displayed)
-        heading.innerHTML = `
+        heading.innerHTML = ` 
             <h3>Yayay, I had no doubt you'd say yes!</h3>
             <img src="https://i.pinimg.com/originals/1e/c5/38/1ec5380287a1eb3abd0faa66febeb081.gif" alt="Celebration GIF">
         `;
