@@ -1,7 +1,9 @@
 /* General Body Styling */
 body {
   font-family: 'Pacifico', cursive;
-  background: linear-gradient(to top, #f7c6c6, #ffb6c1); /* Soft pink gradient */
+  background-image: url('https://raw.githubusercontent.com/Xeven777/valentine/refs/heads/main/src/assets/bg1.webp');
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;

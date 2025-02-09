@@ -9,7 +9,7 @@ const questions = [
     "Would you be my Valentine?",
     "Are you absolutely sure?",
     "You know there's no going back, right?",
-    "This comes with unlimited hugs and memes. Still in?",
+    "This comes with unlimited hugs and kisses. Still in?",
     "Final chance to escape... no? Good.",
     "Okay, but you’re legally obligated to say 'I love you' daily now."
 ];
@@ -27,7 +27,7 @@ yesButton.addEventListener("click", () => {
         yesSizeMultiplier *= 1.2;
         yesButton.style.transform = `scale(${yesSizeMultiplier})`;
     } else {
-        // Last question -> Trigger confetti + Redirect
+        // Last question -> Trigger confetti
         confetti({
             particleCount: 200,
             spread: 70,
@@ -35,10 +35,21 @@ yesButton.addEventListener("click", () => {
             shapes: ["heart"],
             colors: ["#ff6f61", "#ff8c94", "#f7c6c6"],
         });
-        alert("Yay! I’m so glad you said Yes! 💖");
-        window.location.href = "https://www.yourvalentinesurl.com";
+
+        // Clear the existing content in the box and show new content
+        heading.innerHTML = ''; // Clears the question text (you can clear other elements if needed)
+        yesButton.style.display = "none"; // Hide the "Yes" button
+        noButton.style.display = "none"; // Hide the "No" button
+
+        // Show the message and the GIF in the same box (the box where the question was displayed)
+        heading.innerHTML = `
+            <h3>Yayay, I had no doubt you'd say yes!</h3>
+            <img src="https://i.pinimg.com/originals/1e/c5/38/1ec5380287a1eb3abd0faa66febeb081.gif" alt="Celebration GIF">
+        `;
     }
 });
+
+
 
 // No Button Movements
 let isTouchingNo = false;
@@ -65,19 +76,28 @@ function moveNoButton() {
     noButton.style.top = `${y}px`;
 }
 
-// Floating Emojis
-const emojis = ["💖", "🐻", "🌸", "💕", "💘", "🦄", "🍓"];
-function createEmoji() {
-    const emoji = document.createElement("span");
-    emoji.classList.add("emoji");
-    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+// Floating Images
+const images = [
+    "https://media.discordapp.net/attachments/924018917846970422/1337996546326925352/Fluttershy_-_My_Little_Pony_Fluttershy_PNG_Transparent_With_Clear_Background_ID_220710___TopPNG-Photoroom.png?ex=67a979e3&is=67a82863&hm=e63dc12e6329c67bc147084ea88e3a3838297154d56a89e113f557b4886bb0f6&=&format=webp&quality=lossless&width=656&height=671", 
+    "https://media.discordapp.net/attachments/924018917846970422/1337997888839745637/pngtree-cute-panda-with-love-heart-cartoon-png-image_14145286-removebg-preview.png?ex=67a97b23&is=67a829a3&hm=c1fefa61fca0098e661fd5fe627f3f8d55f6c9272f1994b2272e9c9dbf5b7d1e&=&format=webp&quality=lossless", 
+    "https://media.discordapp.net/attachments/924018917846970422/1337996970836492348/CITYPNG.COMKawaii_Hello_Kitty_Character_HD_Transparent_Background_-_1500x1500.png?ex=67a97a48&is=67a828c8&hm=157a7a795d8ea5716b6d423e3a08442a3d71bdb69ceccbcd213d7dfe2cfc4b97&=&format=webp&quality=lossless&width=671&height=671",
+    "https://media.discordapp.net/attachments/924018917846970422/1337998478160171119/pngtree-cute-pink-heart-with-black-eyes-anime-or-manga-character-png-image_15511295.png?ex=67a97bb0&is=67a82a30&hm=d03e1cdf78d7ade85c728820a853833706e2f117b2998abe1ec25a86d0850a24&=&format=webp&quality=lossless&width=671&height=671"
+];
+
+function createImage() {
+    const image = document.createElement("img");
+    image.classList.add("emoji");
+    image.src = images[Math.floor(Math.random() * images.length)];
+    image.alt = "floating image";
+    image.style.width = "2em"; // Adjust the size to match emojis
+    image.style.height = "2em"; // Adjust the size to match emojis
     const x = Math.random() * (window.innerWidth - 50);
     const y = Math.random() * (window.innerHeight - 100);
-    emoji.style.left = `${x}px`;
-    emoji.style.top = `${y}px`;
-    emoji.style.position = "absolute";
+    image.style.left = `${x}px`;
+    image.style.top = `${y}px`;
+    image.style.position = "absolute";
 
-    emoji.addEventListener("click", () => {
+    image.addEventListener("click", () => {
         confetti({
             particleCount: 10,
             spread: 50,
@@ -86,14 +106,14 @@ function createEmoji() {
             colors: ["#ff6f61", "#ff8c94", "#f7c6c6"],
         });
 
-        emoji.remove();
-        setTimeout(createEmoji, 1000);
+        image.remove();
+        setTimeout(createImage, 1000);
     });
 
-    emojiContainer.appendChild(emoji);
+    emojiContainer.appendChild(image);
 }
 
-// Generate floating emojis
-for (let i = 0; i < 5; i++) {
-    createEmoji();
+// Generate floating images
+for (let i = 0; i < 10; i++) {
+    createImage();
 }
