@@ -18,6 +18,7 @@ const questions = [
 let questionIndex = 0; // Track current question
 let fontSize = 2; // Initial font size (in em units)
 let yesSizeMultiplier = 1; // Track button growth
+let noSizeMultiplier = 1; // Track "No" button shrinkage
 
 // Yes Button Click Event
 yesButton.addEventListener("click", () => {
@@ -32,6 +33,9 @@ yesButton.addEventListener("click", () => {
         // Increase button size noticeably (1.5x each time)
         yesSizeMultiplier *= 1.1;
         yesButton.style.transform = `scale(${yesSizeMultiplier})`;
+
+        noSizeMultiplier *= 0.9;
+        noButton.style.transform = `scale(${noSizeMultiplier})`;
 
     } else {
         // Last question -> Trigger confetti
@@ -122,6 +126,6 @@ function createImage() {
 }
 
 // Generate floating images
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 7; i++) {
     createImage();
 }
