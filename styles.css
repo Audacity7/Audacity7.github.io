@@ -1,7 +1,7 @@
 /* General Body Styling */
 body {
-  font-family: 'Pacifico', cursive;
-  background-image: url('https://raw.githubusercontent.com/Xeven777/valentine/refs/heads/main/src/assets/bg1.webp');
+  font-family: "Pacifico", cursive;
+  background-image: url("https://raw.githubusercontent.com/Xeven777/valentine/refs/heads/main/src/assets/bg1.webp");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -61,7 +61,8 @@ h1 {
 }
 
 /* Hover effects on buttons */
-#yes-button:hover, #no-button:hover {
+#yes-button:hover,
+#no-button:hover {
   background-color: #ff80bf;
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
@@ -73,9 +74,15 @@ h1 {
 
 /* Subtle Heart Animation (for a cute effect) */
 @keyframes moveNoButton {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(50px, -50px); }
-  100% { transform: translate(0, 0); }
+  0% {
+      transform: translate(0, 0);
+  }
+  50% {
+      transform: translate(50px, -50px);
+  }
+  100% {
+      transform: translate(0, 0);
+  }
 }
 
 /* REMOVE hover animation on 'No' button to prevent flickering */
@@ -99,6 +106,27 @@ body {
 
 /* Floating Animation */
 @keyframes floatUpDown {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-10px); }
+  0% {
+      transform: translateY(0px);
+  }
+  100% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Center the SVG at the top of the page */
+.svg-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Make sure it's above other content */
+  width: 100%; /* Take up the full width for centering */
+  text-align: center; /* Center the image */
+}
+
+/* Optional: Adjust the size of the SVG if necessary */
+.svg-container img {
+  width: 150px; /* Adjust width to fit your design */
+  height: auto;
 }

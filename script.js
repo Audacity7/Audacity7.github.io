@@ -5,7 +5,6 @@ const emojiContainer = document.getElementById("emoji-container");
 const heading = document.querySelector("h1");
 const gameContainer = document.querySelector(".game-container"); // Reference to the game container
 
-
 // List of progressive questions
 const questions = [
     "Would you be my Valentine?",
@@ -13,7 +12,7 @@ const questions = [
     "You know there's no going back, right?",
     "This comes with unlimited hugs and kisses. Still in?",
     "Final chance to escape... no? Good.",
-    "Okay, but you’re legally obligated to say 'I love you' daily now."
+    "Okay, but you’re legally obligated to say 'I love you' daily now.",
 ];
 
 let questionIndex = 0; // Track current question
@@ -37,7 +36,6 @@ yesButton.addEventListener("click", () => {
 
         noSizeMultiplier *= 0.9;
         noButton.style.transform = `scale(${noSizeMultiplier})`;
-
     } else {
         // Last question -> Trigger confetti
         confetti({
@@ -49,7 +47,7 @@ yesButton.addEventListener("click", () => {
         });
 
         // Clear the existing content in the box and show new content
-        heading.innerHTML = ''; // Clears the question text (you can clear other elements if needed)
+        heading.innerHTML = ""; // Clears the question text (you can clear other elements if needed)
         yesButton.style.display = "none"; // Hide the "Yes" button
         noButton.style.display = "none"; // Hide the "No" button
 
@@ -60,9 +58,6 @@ yesButton.addEventListener("click", () => {
         `;
     }
 });
-
-
-
 
 // No Button Movements
 let isTouchingNo = false;
@@ -91,13 +86,11 @@ function moveNoButton() {
 
 // Floating Images
 const images = [
-    "https://media.discordapp.net/attachments/924018917846970422/1337996546326925352/Fluttershy_-_My_Little_Pony_Fluttershy_PNG_Transparent_With_Clear_Background_ID_220710___TopPNG-Photoroom.png?ex=67a979e3&is=67a82863&hm=e63dc12e6329c67bc147084ea88e3a3838297154d56a89e113f557b4886bb0f6&=&format=webp&quality=lossless&width=656&height=671", 
-    "https://media.discordapp.net/attachments/924018917846970422/1337997888839745637/pngtree-cute-panda-with-love-heart-cartoon-png-image_14145286-removebg-preview.png?ex=67a97b23&is=67a829a3&hm=c1fefa61fca0098e661fd5fe627f3f8d55f6c9272f1994b2272e9c9dbf5b7d1e&=&format=webp&quality=lossless", 
+    "https://media.discordapp.net/attachments/924018917846970422/1337996546326925352/Fluttershy_-_My_Little_Pony_Fluttershy_PNG_Transparent_With_Clear_Background_ID_220710___TopPNG-Photoroom.png?ex=67a979e3&is=67a82863&hm=e63dc12e6329c67bc147084ea88e3a3838297154d56a89e113f557b4886bb0f6&=&format=webp&quality=lossless&width=656&height=671",
+    "https://media.discordapp.net/attachments/924018917846970422/1337997888839745637/pngtree-cute-panda-with-love-heart-cartoon-png-image_14145286-removebg-preview.png?ex=67a97b23&is=67a829a3&hm=c1fefa61fca0098e661fd5fe627f3f8d55f6c9272f1994b2272e9c9dbf5b7d1e&=&format=webp&quality=lossless",
     "https://media.discordapp.net/attachments/924018917846970422/1337996970836492348/CITYPNG.COMKawaii_Hello_Kitty_Character_HD_Transparent_Background_-_1500x1500.png?ex=67a97a48&is=67a828c8&hm=157a7a795d8ea5716b6d423e3a08442a3d71bdb69ceccbcd213d7dfe2cfc4b97&=&format=webp&quality=lossless&width=671&height=671",
-    "https://media.discordapp.net/attachments/924018917846970422/1337998478160171119/pngtree-cute-pink-heart-with-black-eyes-anime-or-manga-character-png-image_15511295.png?ex=67a97bb0&is=67a82a30&hm=d03e1cdf78d7ade85c728820a853833706e2f117b2998abe1ec25a86d0850a24&=&format=webp&quality=lossless&width=671&height=671"
+    "https://media.discordapp.net/attachments/924018917846970422/1337998478160171119/pngtree-cute-pink-heart-with-black-eyes-anime-or-manga-character-png-image_15511295.png?ex=67a97bb0&is=67a82a30&hm=d03e1cdf78d7ade85c728820a853833706e2f117b2998abe1ec25a86d0850a24&=&format=webp&quality=lossless&width=671&height=671",
 ];
-
-
 
 // Floating Images
 function createImage() {
@@ -110,7 +103,7 @@ function createImage() {
 
     // Get the position and size of the game-container
     const gameContainerRect = gameContainer.getBoundingClientRect();
-    
+
     let x, y;
 
     // Ensure the random position is outside the game-container div
@@ -120,7 +113,12 @@ function createImage() {
         y = Math.random() * window.innerHeight;
     } while (
         // Check if the emoji is inside the game-container's bounds
-        !(x < gameContainerRect.left || x > gameContainerRect.right || y < gameContainerRect.top || y > gameContainerRect.bottom)
+        !(
+            x < gameContainerRect.left ||
+            x > gameContainerRect.right ||
+            y < gameContainerRect.top ||
+            y > gameContainerRect.bottom
+        )
     );
 
     image.style.left = `${x}px`;
