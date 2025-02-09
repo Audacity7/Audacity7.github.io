@@ -103,8 +103,24 @@ function createImage() {
     image.alt = "floating image";
     image.style.width = "2em"; // Adjust the size to match emojis
     image.style.height = "2em"; // Adjust the size to match emojis
-    const x = Math.random() * (window.innerWidth - 50);
-    const y = Math.random() * (window.innerHeight - 100);
+
+    // Define the center area to leave empty (75px width, 100px height)
+    const centerXMin = (window.innerWidth - 75) / 2;
+    const centerXMax = (window.innerWidth + 75) / 2;
+    const centerYMin = (window.innerHeight - 100) / 2;
+    const centerYMax = (window.innerHeight + 100) / 2;
+
+    let x, y;
+
+    // Ensure the random position is outside the central area
+    do {
+        x = Math.random() * window.innerWidth;
+        y = Math.random() * window.innerHeight;
+    } while (
+        (x >= centerXMin && x <= centerXMax) && // Check if within horizontal center
+        (y >= centerYMin && y <= centerYMax)    // Check if within vertical center
+    );
+
     image.style.left = `${x}px`;
     image.style.top = `${y}px`;
     image.style.position = "absolute";
