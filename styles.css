@@ -25,6 +25,7 @@ body {
   max-width: 600px;
   min-width: 300px;
   box-sizing: border-box;
+  overflow: auto;
 }
 
 h1 {
