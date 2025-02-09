@@ -115,11 +115,12 @@ function createImage() {
 
     // Ensure the random position is outside the game-container div
     do {
+        // Get random coordinates within the window, ensuring the emoji is outside the game-container
         x = Math.random() * window.innerWidth;
         y = Math.random() * window.innerHeight;
     } while (
-        x >= gameContainerRect.left && x <= gameContainerRect.right && // Check if within horizontal bounds of the game-container
-        y >= gameContainerRect.top && y <= gameContainerRect.bottom // Check if within vertical bounds of the game-container
+        // Check if the emoji is inside the game-container's bounds
+        !(x < gameContainerRect.left || x > gameContainerRect.right || y < gameContainerRect.top || y > gameContainerRect.bottom)
     );
 
     image.style.left = `${x}px`;
