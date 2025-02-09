@@ -50,7 +50,7 @@ yesButton.addEventListener("click", () => {
         // Show the message and the GIF in the same box (the box where the question was displayed)
         heading.innerHTML = ` 
             <h3>Yayay, I had no doubt you'd say yes!</h3>
-            <img src="https://i.pinimg.com/originals/1e/c5/38/1ec5380287a1eb3abd0faa66febeb081.gif" alt="Celebration GIF">
+            <img src="https://i.pinimg.com/originals/1e/c5/38/1ec5380287a1eb3abd0faa66febeb081.gif" alt="Celebration GIF" style="width: 50%; height: auto;">
         `;
     }
 });
