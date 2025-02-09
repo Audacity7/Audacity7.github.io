@@ -16,6 +16,7 @@ const questions = [
 ];
 
 let questionIndex = 0; // Track current question
+let fontSize = 2; // Initial font size (in em units)
 let yesSizeMultiplier = 1; // Track button growth
 
 // Yes Button Click Event
@@ -24,14 +25,14 @@ yesButton.addEventListener("click", () => {
         questionIndex++; // Move to the next question
         heading.textContent = questions[questionIndex];
 
+        // Decrease the font size with each "Yes" click (by 0.1 em)
+        fontSize *= 0.9; // Decrease font size by 10%
+        heading.style.fontSize = `${fontSize}em`; // Apply the new font size to the question
+
         // Increase button size noticeably (1.5x each time)
         yesSizeMultiplier *= 1.2;
         yesButton.style.transform = `scale(${yesSizeMultiplier})`;
 
-        // Also grow the game container to match the button size
-        const containerScale = 1 + (yesSizeMultiplier - 1) * 0.5; // Make the container grow at a slower rate
-        gameContainer.style.transform = `scale(${containerScale})`;
-        gameContainer.style.transition = "transform 0.3s ease"; // Smooth transition for container resizing
     } else {
         // Last question -> Trigger confetti
         confetti({
@@ -54,6 +55,7 @@ yesButton.addEventListener("click", () => {
         `;
     }
 });
+
 
 
 
