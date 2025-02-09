@@ -30,7 +30,7 @@ yesButton.addEventListener("click", () => {
         heading.style.fontSize = `${fontSize}em`; // Apply the new font size to the question
 
         // Increase button size noticeably (1.5x each time)
-        yesSizeMultiplier *= 1.2;
+        yesSizeMultiplier *= 1.1;
         yesButton.style.transform = `scale(${yesSizeMultiplier})`;
 
     } else {

@@ -11,7 +11,7 @@ body {
   margin: 0;
   flex-direction: column;
   overflow: hidden;
-  transform: scale(0.5); /* Scale down by 50% */
+  transform: scale(0.7); /* Scale down by 50% */
 }
 
 /* Game Container */
