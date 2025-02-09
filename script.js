@@ -5,6 +5,7 @@ const emojiContainer = document.getElementById("emoji-container");
 const heading = document.querySelector("h1");
 const gameContainer = document.querySelector(".game-container"); // Reference to the game container
 
+
 // List of progressive questions
 const questions = [
     "Would you be my Valentine?",
@@ -96,6 +97,9 @@ const images = [
     "https://media.discordapp.net/attachments/924018917846970422/1337998478160171119/pngtree-cute-pink-heart-with-black-eyes-anime-or-manga-character-png-image_15511295.png?ex=67a97bb0&is=67a82a30&hm=d03e1cdf78d7ade85c728820a853833706e2f117b2998abe1ec25a86d0850a24&=&format=webp&quality=lossless&width=671&height=671"
 ];
 
+
+
+// Floating Images
 function createImage() {
     const image = document.createElement("img");
     image.classList.add("emoji");
@@ -104,21 +108,18 @@ function createImage() {
     image.style.width = "2em"; // Adjust the size to match emojis
     image.style.height = "2em"; // Adjust the size to match emojis
 
-    // Define the center area to leave empty (150px width, 200px height)
-    const centerXMin = (window.innerWidth - 150) / 2;
-    const centerXMax = (window.innerWidth + 150) / 2;
-    const centerYMin = (window.innerHeight - 200) / 2;
-    const centerYMax = (window.innerHeight + 200) / 2;
-
+    // Get the position and size of the game-container
+    const gameContainerRect = gameContainer.getBoundingClientRect();
+    
     let x, y;
 
-    // Ensure the random position is outside the central area
+    // Ensure the random position is outside the game-container div
     do {
         x = Math.random() * window.innerWidth;
         y = Math.random() * window.innerHeight;
     } while (
-        (x >= centerXMin && x <= centerXMax) && // Check if within horizontal center
-        (y >= centerYMin && y <= centerYMax)    // Check if within vertical center
+        x >= gameContainerRect.left && x <= gameContainerRect.right && // Check if within horizontal bounds of the game-container
+        y >= gameContainerRect.top && y <= gameContainerRect.bottom // Check if within vertical bounds of the game-container
     );
 
     image.style.left = `${x}px`;
