@@ -117,7 +117,7 @@ body {
 /* Center the SVG at the top of the page */
 .svg-container {
   position: absolute;
-  top: -20;
+  top: 5;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10; /* Make sure it's above other content */
