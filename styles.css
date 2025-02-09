@@ -11,7 +11,7 @@ body {
   margin: 0;
   flex-direction: column;
   overflow: hidden;
-  transform: scale(0.7); /* Scale down by 50% */
+  transform: scale(0.5); /* Scale down by 50% */
 }
 
 /* Game Container */
@@ -55,6 +55,7 @@ h1 {
 }
 
 #no-button {
+  touch-action: none;
   background-color: #ff4d94; /* Medium pink */
   color: white;
 }
@@ -66,7 +67,6 @@ h1 {
   box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
 }
 
-/* REMOVE hover animation on 'No' button to prevent flickering */
 #no-button:hover {
   animation: none;
 }
@@ -76,6 +76,11 @@ h1 {
   0% { transform: translate(0, 0); }
   50% { transform: translate(50px, -50px); }
   100% { transform: translate(0, 0); }
+}
+
+/* REMOVE hover animation on 'No' button to prevent flickering */
+#no-button:hover {
+  animation: none;
 }
 
 /* Confetti Animation (with hearts) */
