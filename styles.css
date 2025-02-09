@@ -1,132 +1,132 @@
 /* General Body Styling */
 body {
-  font-family: "Pacifico", cursive;
-  background-image: url("https://raw.githubusercontent.com/Xeven777/valentine/refs/heads/main/src/assets/bg1.webp");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  flex-direction: column;
-  overflow: hidden;
-  transform: scale(0.7); /* Scale down by 50% */
+    font-family: "Pacifico", cursive;
+    background-image: url("https://raw.githubusercontent.com/Xeven777/valentine/refs/heads/main/src/assets/bg1.webp");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.7); /* Scale down by 50% */
 }
 
 /* Game Container */
 .game-container {
-  text-align: center;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  width: 80%;
-  max-width: 600px;
-  min-width: 300px;
-  box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 600px;
+    min-width: 300px;
+    box-sizing: border-box;
 }
 
 h1 {
-  font-size: 2.5em;
-  color: #ff69b4; /* Hot pink */
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.3);
-  font-weight: bold;
+    font-size: 2.5em;
+    color: #ff69b4; /* Hot pink */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.3);
+    font-weight: bold;
 }
 
 /* Buttons */
 .button {
-  font-size: 1.5em;
-  padding: 20px 30px;
-  margin: 10px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #ff69b4; /* Hot pink */
-  color: white;
-  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+    font-size: 1.5em;
+    padding: 20px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #ff69b4; /* Hot pink */
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
 }
 
 #yes-button {
-  background-color: #ff66b2; /* Light pink */
-  color: white;
+    background-color: #ff66b2; /* Light pink */
+    color: white;
 }
 
 #no-button {
-  touch-action: none;
-  background-color: #ff4d94; /* Medium pink */
-  color: white;
+    touch-action: none;
+    background-color: #ff4d94; /* Medium pink */
+    color: white;
 }
 
 /* Hover effects on buttons */
 #yes-button:hover,
 #no-button:hover {
-  background-color: #ff80bf;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+    background-color: #ff80bf;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
 }
 
 #no-button:hover {
-  animation: none;
+    animation: none;
 }
 
 /* Subtle Heart Animation (for a cute effect) */
 @keyframes moveNoButton {
-  0% {
-      transform: translate(0, 0);
-  }
-  50% {
-      transform: translate(50px, -50px);
-  }
-  100% {
-      transform: translate(0, 0);
-  }
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50px, -50px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 /* REMOVE hover animation on 'No' button to prevent flickering */
 #no-button:hover {
-  animation: none;
+    animation: none;
 }
 
 /* Confetti Animation (with hearts) */
 body {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 /* Floating Emojis */
 .emoji {
-  position: absolute;
-  font-size: 1rem;
-  cursor: pointer;
-  animation: floatUpDown 2s infinite ease-in-out alternate;
-  transition: transform 0.2s ease;
+    position: absolute;
+    font-size: 1rem;
+    cursor: pointer;
+    animation: floatUpDown 2s infinite ease-in-out alternate;
+    transition: transform 0.2s ease;
 }
 
 /* Floating Animation */
 @keyframes floatUpDown {
-  0% {
-      transform: translateY(0px);
-  }
-  100% {
-      transform: translateY(-10px);
-  }
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Center the SVG at the top of the page */
 .svg-container {
-  position: absolute;
-  top: 5;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10; /* Make sure it's above other content */
-  width: 100%; /* Take up the full width for centering */
-  text-align: center; /* Center the image */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Make sure it's above other content */
+    width: 100%; /* Take up the full width for centering */
+    text-align: center; /* Center the image */
 }
 
 /* Optional: Adjust the size of the SVG if necessary */
 .svg-container img {
-  width: 150px; /* Adjust width to fit your design */
-  height: auto;
+    width: 150px; /* Adjust width to fit your design */
+    height: auto;
 }
